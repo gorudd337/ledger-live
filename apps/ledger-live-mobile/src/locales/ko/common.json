@@ -492,7 +492,7 @@
       "description" : "내 Ledger에서 앱을 다시 설치해 보세요"
     },
     "NotEnoughGas" : {
-      "title" : "상위 계정 잔액이 네트워크 수수료에 충분하지 않습니다",
+      "title" : "{{cryptoName}} 네트워크에서 스왑하려면 네트워크 수수료 명목으로 {{fees}} {{ticker}}가 필요합니다. <link0>{{ticker}} 구매</link0>",
       "description" : "토큰 트랜잭션 수수료로 계정에 코인을 전송하세요."
     },
     "NotEnoughGasSwap" : {
@@ -605,6 +605,16 @@
     },
     "TronNotEnoughEnergy" : {
       "title" : "에너지가 필요한 것보다 낮습니다. 수수료로 최대 50 TRX를 지불할 수 있습니다."
+    },
+    "TronNoUnfrozenResource" : {
+      "title" : "인출할 동결 해제된 자산이 없습니다"
+    },
+    "TronInvalidUnDelegateResourceAmount" : {
+      "title" : "위임된 자산이 충분하지 않습니다"
+    },
+    "TronUnfreezeNotExpired" : {
+      "title" : "자산이 아직 동결 해제되지 않았습니다",
+      "description" : "인출하려면 {{time}}까지 기다려야 합니다."
     },
     "UpdateYourApp" : {
       "title" : "앱 업데이트 필요",
@@ -901,6 +911,9 @@
     "FirmwareNotRecognized" : {
       "title" : "유효하지 않은 공급자",
       "description" : "\"My Ledger 공급자\" 설정을 변경해야 합니다. 이를 변경하려면 Ledger Live \"설정\"을 열고 \"실험 기능\"을 선택한 다음 다른 공급자를 선택합니다."
+    },
+    "TezosUnrevealedAccount" : {
+      "title" : "스왑 불가: 테조스 계정이나 변경 쌍을 통해 초기 전송/위임이 필요합니다."
     }
   },
   "crash" : {
@@ -2313,6 +2326,9 @@
       "VOTE" : "투표 완료",
       "FREEZE" : "동결됨",
       "UNFREEZE" : "동결 해제",
+      "UNDELEGATE_RESOURCE" : "위임 해제됨",
+      "WITHDRAW_EXPIRE_UNFREEZE" : "출금",
+      "LEGACYUNFREEZE" : "동결 해제",
       "REWARD" : "보상 수령됨",
       "FEES" : "수수료",
       "OPT_IN" : "참여",
@@ -3687,7 +3703,7 @@
       "description" : "TRX를 동결하여 안전하게 보상 수익을 받으면서 자산에 대한 통제 권한을 유지하세요.",
       "steps" : {
         "0" : "위임된 자산은 귀하의 소유입니다.",
-        "1" : "3일 후 자산을 동결 해제할 수 있습니다.",
+        "1" : "언제든지 자산 동결을 해제할 수 있으며, 14일의 동결 해제 기간이 지나면 자산에 액세스할 수 있습니다.",
         "2" : "Ledger 장치로 자산을 동결하고 안전하게 투표하세요."
       },
       "howVotingWorks" : "투표는 어떤 원리인가요?",
@@ -5344,7 +5360,7 @@
             "description" : "TRX를 타사 후보자에게 위임하여 보상을 받아보세요. 계속을 클릭하여 자산을 동결하고 투표를 해보세요.",
             "bullet" : {
               "delegate" : "위임된 자산은 귀하의 소유입니다.",
-              "access" : "동결한 지 3일이 지나면 자산을 이용할 수 있습니다.",
+              "access" : "동결된 자산은 즉시 동결 해제될 수 있으며 14일의 동결 해제 기간이 지나면 액세스가 가능합니다.",
               "ledger" : "Ledger 장치로 안전하게 위임하세요."
             },
             "button" : {
@@ -5362,7 +5378,7 @@
       },
       "unfreeze" : {
         "title" : "동결 해제",
-        "description" : "TRX 동결을 해제하여 가용 잔금에 다시 추가하세요. 이제는 보상을 받으실 수 없습니다."
+        "description" : "TRX 동결을 해제하여 가용 잔액에 다시 추가하세요. 더 이상 보상을 받으실 수 없습니다. 자산은 14일의 동결 해제 기간 이후에 사용할 수 있습니다."
       },
       "vote" : {
         "title" : "투표",
@@ -5920,6 +5936,9 @@
       "freeze" : "장치에서 확인하여 거래를 완료하세요",
       "unfreeze" : "장치에서 확인하여 거래를 완료하세요",
       "claimReward" : "장치에서 확인하여 거래를 완료하세요",
+      "legacyUnfreeze" : "장치에서 확인하여 거래를 완료하세요",
+      "withdrawExpireUnfreeze" : "장치에서 확인하여 거래를 완료하세요",
+      "undelegateResource" : "장치에서 확인하여 거래를 완료하세요",
       "vote" : "장치에서 확인하여 거래를 완료하세요",
       "delegate" : "장치에서 확인하여 거래를 완료하세요",
       "redelegate" : "장치에서 확인하여 거래를 완료하세요",
@@ -5944,9 +5963,12 @@
     "votes" : "투표",
     "validator" : "검증인",
     "infoWording" : {
-      "freeze" : "동결된 토큰은 3일 동안 잠금 상태를 유지합니다.",
+      "freeze" : "토큰을 동결하여 대역폭이나 에너지를 획득하고 동등한 수량의 TRON Power(TP)를 받으세요.",
       "unfreeze" : "귀하의 {{resource}} 포인트가 줄어들고, 모든 투표가 취소됩니다.",
+      "legacyUnfreeze" : "귀하의 {{resource}} 포인트가 줄어들고, 모든 투표가 취소됩니다.",
       "claimReward" : "24시간마다 보상을 수령할 수 있습니다.",
+      "withdrawExpireUnfreeze" : "동결 해제 기간이 지난 동결 해제 자산은 인출됩니다.",
+      "unDelegateResource" : "{{resource}} 위임 취소",
       "cosmos" : {
         "claimReward" : "선택된 검증인에게 대기 중 보상이 있으면, 자동으로 수령됩니다.",
         "redelegate" : "위임 해제 자산은 {{numberOfDays}}일 후에 이용 가능 잔액으로 되돌아옵니다.",
