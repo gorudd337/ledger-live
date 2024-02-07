@@ -3593,22 +3593,32 @@
     "stake" : {
       "title" : "Multiplique suas posições de ETH",
       "subTitle" : "Aplique seu ETH e multiplique suas posições recebendo recompensas diárias diretamente no Ledger Live.",
+      "kiln_pooling" : {
+        "title" : "Reserva de staking Kiln",
+        "description" : "Stake with no minimum. Earn auto-compounded rewards with no lock-up period.",
+        "supportLink" : "Saiba mais sobre a reserva da Kiln"
+      },
       "lido" : {
         "title" : "Ganhar com a Lido",
-        "description" : "Faça staking de Ethereum com a Lido e ganhe recompensas diariamente. Sem período de bloqueio. Sem mínimo.",
+        "description" : "Stake any amount of ETH for instant liquidity and daily rewards.",
         "supportLink" : "Saiba mais sobre a Lido"
+      },
+      "stader-eth" : {
+        "title" : "Stader Labs",
+        "description" : "Stake with no minimum. Earn auto-compounded rewards with access to instant liquidity.",
+        "supportLink" : "Learn more about Stader pooling"
       },
       "kiln" : {
         "title" : "Staking dedicado Kiln",
         "tag" : "Requer 32 ETH",
-        "description" : "Aplique em staking com validadores dedicados. Requer múltiplos de 32 ETH. Recompensas são resgatadas manualmente. Saia a qualquer momento.",
+        "description" : "Stake over 32 ETH on dedicated validators and easily claim rewards.",
         "supportLink" : "Saiba mais sobre o validador Kiln"
       },
-      "kiln_pooling" : {
-        "title" : "Reserva de staking Kiln",
-        "tag" : "Sem mínimo",
-        "description" : "Junte-se a uma reserva de staking. Não requer mínimo de ETH. Recompensas são compostas automaticamente Saia a qualquer momento.",
-        "supportLink" : "Saiba mais sobre a reserva da Kiln"
+      "figment" : {
+        "title" : "Figment",
+        "tag" : "Requer 32 ETH",
+        "description" : "Stake over 32 ETH on dedicated validators and get rewards automatically sent to your account.",
+        "supportLink" : "Learn more about Figment validator"
       }
     }
   },
