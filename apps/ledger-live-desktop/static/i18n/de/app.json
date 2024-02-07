@@ -3593,22 +3593,32 @@
     "stake" : {
       "title" : "Vermehren Sie Ihr ETH-Guthaben",
       "subTitle" : "Staken Sie Ihre ETH und erhöhen Sie Ihren Kontostand, indem Sie täglich Belohnungen direkt in Ledger Live erhalten.",
+      "kiln_pooling" : {
+        "title" : "Kiln Staking Pool",
+        "description" : "Staken Sie ohne Mindestbetrag. Verdienen Sie automatisch aufgelaufene Belohnungen ohne Sperrfrist.",
+        "supportLink" : "Mehr über Kiln Pooling erfahren."
+      },
       "lido" : {
         "title" : "Verdienen mit Lido",
-        "description" : "Staken Sie Ihr Ethereum mit Lido und verdienen Sie täglich Belohnungen. Keine Sperrfrist. Kein Minimum",
+        "description" : "Staken Sie einen beliebigen ETH-Betrag für Sofortliquidität und tägliche Belohnungen.",
         "supportLink" : "Mehr über Lido lernen"
+      },
+      "stader-eth" : {
+        "title" : "Stader Labs",
+        "description" : "Staken Sie ohne Mindestbetrag. Verdienen Sie automatisch aufgelaufene Belohnungen und erhalten Sie direkte Liquidität.",
+        "supportLink" : "Mehr über Pooling bei Stader erfahren"
       },
       "kiln" : {
         "title" : "Staking mit Kiln",
         "tag" : "Benötigt 32 ETH",
-        "description" : "Staken Sie mit speziellen Validatoren. Hierfür wird ein Vielfaches von 32 ETH benötigt. Prämien werden manuell beansprucht. Kann jederzeit beendet werden.",
+        "description" : "Staken Sie mehr als 32 ETH bei speziellen Validatoren und fordern Sie Ihre Belohnungen ganz leicht ein.",
         "supportLink" : "Mehr über Kiln-Validator erfahren"
       },
-      "kiln_pooling" : {
-        "title" : "Kiln Staking Pool",
-        "tag" : "Kein Minimum",
-        "description" : "Treten Sie einem Staking-Pool bei. Kein ETH-Minimum erforderlich. Prämien werden automatisch zusammengeführt. Kann jederzeit beendet werden.",
-        "supportLink" : "Mehr über Kiln Pooling erfahren."
+      "figment" : {
+        "title" : "Figment",
+        "tag" : "Benötigt 32 ETH",
+        "description" : "Staken Sie mehr als 32 ETH bei speziellen Validatoren und lassen Sie Belohnungen automatisch Ihrem Konto gutschreiben.",
+        "supportLink" : "Mehr über Figment als Validator erfahren"
       }
     }
   },
