@@ -14,7 +14,7 @@ exports[`stacks currency bridge scanAccounts stacks seed 1 1`] = `
         "derivationPath": "44'/5757'/0'/0/0",
       },
     ],
-    "id": "js:2:stacks:022a460decc9dba8c452927fecb33d7ae25a8d79dc5442b84feaf8f3aa0e2b575d:",
+    "id": "js:2:stacks:SP3KS7VMY2ZNE6SB88PHR4SKRK2EEPHS8N8MCCBR9:",
     "index": 0,
     "name": "Stacks 1",
     "nfts": undefined,
@@ -41,7 +41,7 @@ exports[`stacks currency bridge scanAccounts stacks seed 1 1`] = `
         "derivationPath": "44'/5757'/1'/0/0",
       },
     ],
-    "id": "js:2:stacks:034bbb21911e9d4502ac170162c5c05cbba65cbb79e5b46adf95152af2d0e78a45:",
+    "id": "js:2:stacks:SP2DV2RVZP1A69Q6VAG5PHEQ6ZHQHZPCV84TMYNGN:",
     "index": 1,
     "name": "Stacks 2",
     "nfts": undefined,
@@ -63,7 +63,7 @@ exports[`stacks currency bridge scanAccounts stacks seed 1 2`] = `
 [
   [
     {
-      "accountId": "js:2:stacks:022a460decc9dba8c452927fecb33d7ae25a8d79dc5442b84feaf8f3aa0e2b575d:",
+      "accountId": "js:2:stacks:SP3KS7VMY2ZNE6SB88PHR4SKRK2EEPHS8N8MCCBR9:",
       "blockHash": null,
       "blockHeight": 76538,
       "contract": undefined,
@@ -72,7 +72,7 @@ exports[`stacks currency bridge scanAccounts stacks seed 1 2`] = `
       },
       "fee": "72000",
       "hash": "0x445e42f706602f2f10a956894a61d7f558cd6e5bc88cb4b708ea72e00419d7b0",
-      "id": "js:2:stacks:022a460decc9dba8c452927fecb33d7ae25a8d79dc5442b84feaf8f3aa0e2b575d:-0x445e42f706602f2f10a956894a61d7f558cd6e5bc88cb4b708ea72e00419d7b0-IN",
+      "id": "js:2:stacks:SP3KS7VMY2ZNE6SB88PHR4SKRK2EEPHS8N8MCCBR9:-0x445e42f706602f2f10a956894a61d7f558cd6e5bc88cb4b708ea72e00419d7b0-IN",
       "operator": undefined,
       "recipients": [
         "SP3KS7VMY2ZNE6SB88PHR4SKRK2EEPHS8N8MCCBR9",
@@ -87,7 +87,7 @@ exports[`stacks currency bridge scanAccounts stacks seed 1 2`] = `
       "value": "2000000",
     },
     {
-      "accountId": "js:2:stacks:022a460decc9dba8c452927fecb33d7ae25a8d79dc5442b84feaf8f3aa0e2b575d:",
+      "accountId": "js:2:stacks:SP3KS7VMY2ZNE6SB88PHR4SKRK2EEPHS8N8MCCBR9:",
       "blockHash": null,
       "blockHeight": 76373,
       "contract": undefined,
@@ -96,7 +96,7 @@ exports[`stacks currency bridge scanAccounts stacks seed 1 2`] = `
       },
       "fee": "180",
       "hash": "0x6f1075f275482ca923b2fe9f8386c50fde0d3bdf5fee880459c6009d19777ffb",
-      "id": "js:2:stacks:022a460decc9dba8c452927fecb33d7ae25a8d79dc5442b84feaf8f3aa0e2b575d:-0x6f1075f275482ca923b2fe9f8386c50fde0d3bdf5fee880459c6009d19777ffb-IN",
+      "id": "js:2:stacks:SP3KS7VMY2ZNE6SB88PHR4SKRK2EEPHS8N8MCCBR9:-0x6f1075f275482ca923b2fe9f8386c50fde0d3bdf5fee880459c6009d19777ffb-IN",
       "operator": undefined,
       "recipients": [
         "SP3KS7VMY2ZNE6SB88PHR4SKRK2EEPHS8N8MCCBR9",

@@ -46,6 +46,7 @@ const stacks: CurrenciesData<Transaction> = {
         freshAddresses: [],
         blockHeight: 0,
         operations: [],
+        xpub: DUMMY_PUBKEY,
         pendingOperations: [],
         currencyId: "stacks",
         unitMagnitude: 6,
