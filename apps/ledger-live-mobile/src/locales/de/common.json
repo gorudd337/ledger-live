@@ -144,7 +144,7 @@
       }
     },
     "ConnectManagerTimeout" : {
-      "title" : "Die Verbindung zu My Ledger ist fehlgeschlagen",
+      "title" : "Leider ist die sichere Verbindung mit Ledger fehlgeschlagen",
       "description" : {
         "ios" : {
           "nanoX" : "Bitte stellen Sie sicher, dass Ihr {{productName}} entsperrt ist, wenn Bluetooth aktiviert ist."
@@ -622,8 +622,8 @@
       "primaryCTA" : "My Ledger öffnen"
     },
     "UserRefusedAllowManager" : {
-      "title" : "Manager auf dem Gerät deaktiviert",
-      "description" : "Bitte erlauben Sie den Manager auf Ihrem Gerät und versuchen Sie es dann erneut."
+      "title" : "Sichere Verbindung auf dem Gerät abgelehnt",
+      "description" : "Bitte lassen Sie die sichere Verbindung auf Ihrem Gerät zu und versuchen Sie es noch einmal."
     },
     "UserRefusedAddress" : {
       "title" : "Empfangsadresse abgelehnt",
@@ -3888,7 +3888,7 @@
     "stayInTheAppPlz" : "Bleiben Sie in der Ledger Live-App und halten Sie Ihren Ledger bereit.",
     "allowAppPermission" : "Öffnen Sie die {{wording}} App auf Ihrem Gerät",
     "allowAppPermissionSubtitleToken" : "zum Verwalten Ihrer {{token}}-Tokens",
-    "allowManagerPermission" : "Ledger Manager auf Ihrem {{productName}}-Gerät zulassen",
+    "allowManagerPermission" : "Lassen Sie eine sichere Verbindung mit Ledger zu",
     "allowRenaming" : "Umbenennen auf Ihrem {{productName}}-Gerät zulassen",
     "allowRemoveCustomLockscreen" : "Bestätigen Sie die Entfernung des Bildes auf Ihrem Ledger Stax",
     "allowSecureConnection" : "Lassen eine sichere Verbindung mit Ledger zu",
