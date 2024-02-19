@@ -144,7 +144,7 @@
       }
     },
     "ConnectManagerTimeout" : {
-      "title" : "Échec de la connexion à My Ledger",
+      "title" : "Échec de la connexion sécurisée avec Ledger",
       "description" : {
         "ios" : {
           "nanoX" : "Assurez-vous que votre {{productName}} est déverrouillé et que le Bluetooth est activé."
@@ -622,8 +622,8 @@
       "primaryCTA" : "Ouvrir My Ledger"
     },
     "UserRefusedAllowManager" : {
-      "title" : "Gestionnaire désactivé sur l’appareil",
-      "description" : "Autorisez le Gestionnaire (\"Manager\") sur votre appareil et réessayez."
+      "title" : "Connexion sécurisée refusée sur l’appareil",
+      "description" : "Veuillez autoriser la connexion sécurisée sur votre appareil et réessayez."
     },
     "UserRefusedAddress" : {
       "title" : "Adresse de bénéficiaire rejetée",
@@ -3888,7 +3888,7 @@
     "stayInTheAppPlz" : "Restez dans Ledger Live et gardez votre appareil Ledger à portée de main.",
     "allowAppPermission" : "Ouvrez l’app {{wording}} sur votre appareil",
     "allowAppPermissionSubtitleToken" : "pour gérer vos tokens {{token}}",
-    "allowManagerPermission" : "Autorisez la connexion sécurisée sur votre {{productName}}",
+    "allowManagerPermission" : "Autorisez la connexion sécurisée avec Ledger",
     "allowRenaming" : "Autorisez le changement de nom sur votre {{productName}}",
     "allowRemoveCustomLockscreen" : "Confirmez la suppression du fond d’écran sur votre Ledger Stax",
     "allowSecureConnection" : "Autorisez la connexion sécurisée avec Ledger",
