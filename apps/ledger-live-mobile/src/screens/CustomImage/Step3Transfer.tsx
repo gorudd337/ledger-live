@@ -14,7 +14,7 @@ import {
   setReadOnlyMode,
 } from "~/actions/settings";
 import { ScreenName } from "~/const";
-import CustomImageDeviceAction from "~/components/CustomImageDeviceAction";
+import CustomImageDeviceAction from "~/components/CustomLockScreenDeviceAction";
 import TestImage from "~/components/CustomImage/TestImage";
 import SelectDevice from "~/components/SelectDevice";
 import SelectDevice2, { SetHeaderOptionsRequest } from "~/components/SelectDevice2";
@@ -28,8 +28,6 @@ import { CustomImageNavigatorParamList } from "~/components/RootNavigator/types/
 import { addKnownDevice } from "~/actions/ble";
 import { lastConnectedDeviceSelector } from "~/reducers/settings";
 import { NavigationHeaderBackButton } from "~/components/NavigationHeaderBackButton";
-
-const deviceModelIds = [DeviceModelId.stax];
 
 type NavigationProps = BaseComposite<
   StackNavigatorProps<CustomImageNavigatorParamList, ScreenName.CustomImageStep3Transfer>
@@ -57,7 +55,7 @@ export const step3TransferHeaderOptions: ReactNavigationHeaderOptions = {
  */
 const Step3Transfer = ({ route, navigation }: NavigationProps) => {
   const dispatch = useDispatch();
-  const { rawData, device: deviceFromRoute, previewData, imageType } = route.params;
+  const { rawData, device: deviceFromRoute, deviceModelId, previewData, imageType } = route.params;
 
   const [device, setDevice] = useState<Device | null>(deviceFromRoute);
   const lastConnectedDevice = useSelector(lastConnectedDeviceSelector);
@@ -71,9 +69,9 @@ const Step3Transfer = ({ route, navigation }: NavigationProps) => {
   const handleError = useCallback(
     (error: Error) => {
       console.error(error);
-      navigation.navigate(ScreenName.CustomImageErrorScreen, { error, device });
+      navigation.navigate(ScreenName.CustomImageErrorScreen, { error, device, deviceModelId });
     },
-    [navigation, device],
+    [navigation, device, deviceModelId],
   );
 
   const handleDeviceSelected = useCallback(
@@ -141,6 +139,7 @@ const Step3Transfer = ({ route, navigation }: NavigationProps) => {
         {device ? (
           <CustomImageDeviceAction
             device={device}
+            deviceModelId={deviceModelId}
             hexImage={rawData.hexData}
             source={{ uri: previewData.imageBase64DataUri }}
             onResult={handleResult}
@@ -159,7 +158,7 @@ const Step3Transfer = ({ route, navigation }: NavigationProps) => {
           <Flex flex={1} alignSelf="stretch">
             <SelectDevice
               onSelect={handleDeviceSelected}
-              deviceModelIds={deviceModelIds}
+              deviceModelIds={[deviceModelId]}
               autoSelectOnAdd
             />
           </Flex>

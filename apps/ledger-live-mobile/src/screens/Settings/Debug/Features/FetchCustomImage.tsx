@@ -5,16 +5,17 @@ import { Text, Flex, Button } from "@ledgerhq/native-ui";
 import type { Device } from "@ledgerhq/live-common/hw/actions/types";
 import { useSelector, useDispatch } from "react-redux";
 import { useFeature } from "@ledgerhq/live-common/featureFlags/index";
-import { targetDisplayDimensions } from "../../../CustomImage/shared";
+import { getScreenVisibleAreaDimensions } from "@ledgerhq/live-common/device/use-cases/screenSpecs";
 import { customImageBackupSelector } from "~/reducers/settings";
 import { setCustomImageBackup } from "~/actions/settings";
 import NavigationScrollView from "~/components/NavigationScrollView";
 import SelectDevice from "~/components/SelectDevice";
 import SelectDevice2, { SetHeaderOptionsRequest } from "~/components/SelectDevice2";
-import CustomImageDeviceAction from "~/components/CustomImageDeviceAction";
+import CustomImageDeviceAction from "~/components/CustomLockScreenDeviceAction";
 import ImageHexProcessor from "~/components/CustomImage/ImageHexProcessor";
 import { ProcessorPreviewResult } from "~/components/CustomImage/ImageProcessor";
-import StaxFramedImage, { transferConfig } from "~/components/CustomImage/StaxFramedImage";
+import FramedPicture from "~/components/CustomImage/FramedPicture";
+import { getFramedPictureConfig } from "~/components/CustomImage/framedPictureConfigs";
 import { NavigationHeaderBackButton } from "~/components/NavigationHeaderBackButton";
 import { ReactNavigationHeaderOptions } from "~/components/RootNavigator/types/helpers";
 import { useStaxFetchImageDeviceAction } from "~/hooks/deviceActions";
@@ -36,7 +37,7 @@ export default function DebugFetchCustomImage() {
   const [action, setAction] = useState<string>("");
   const [imageSource, setImageSource] = useState<ComponentProps<typeof Image>["source"]>();
 
-  const { hash, hex } = useSelector(customImageBackupSelector) || {};
+  const { hash, hex, deviceModelId } = useSelector(customImageBackupSelector) || {};
   const currentBackup = useRef<string>(hash || "");
   const dispatch = useDispatch();
 
@@ -70,7 +71,7 @@ export default function DebugFetchCustomImage() {
   }, []);
 
   const onDeleteBackup = useCallback(() => {
-    dispatch(setCustomImageBackup({ hash: "", hex: "" }));
+    dispatch(setCustomImageBackup(null));
     currentBackup.current = "";
   }, [dispatch]);
 
@@ -82,10 +83,10 @@ export default function DebugFetchCustomImage() {
     status;
 
   useEffect(() => {
-    if (imgHash && hexImage) {
-      dispatch(setCustomImageBackup({ hash: imgHash, hex: hexImage }));
+    if (imgHash && hexImage && deviceModelId) {
+      dispatch(setCustomImageBackup({ hash: imgHash, hex: hexImage, deviceModelId }));
     }
-  }, [dispatch, imgHash, hexImage]);
+  }, [dispatch, imgHash, hexImage, deviceModelId]);
 
   const requestToSetHeaderOptions = useCallback(
     (request: SetHeaderOptionsRequest) => {
@@ -158,9 +159,10 @@ export default function DebugFetchCustomImage() {
                   <Text variant="bodyLineHeight">{"Something else"}</Text>
                 )}
               </>
-            ) : hex ? (
+            ) : hex && deviceModelId ? (
               <CustomImageDeviceAction
                 device={device}
+                deviceModelId={deviceModelId}
                 hexImage={hex}
                 onResult={onResult}
                 onSkip={onSkip}
@@ -172,17 +174,20 @@ export default function DebugFetchCustomImage() {
             {hash ? `Current backup hash '${hash}'` : "No backup available"}
           </Text>
         </Flex>
-        {hex ? (
+        {hex && deviceModelId ? (
           <>
             <ImageHexProcessor
               hexData={hex as string}
-              {...targetDisplayDimensions}
+              {...getScreenVisibleAreaDimensions(deviceModelId)}
               onPreviewResult={handleImageSourceLoaded}
               onError={() => console.error(error)}
             />
             {imageSource ? (
               <Flex flexDirection="row" flexGrow={0}>
-                <StaxFramedImage frameConfig={transferConfig} source={imageSource} />
+                <FramedPicture
+                  framedPictureConfig={getFramedPictureConfig("transfer", deviceModelId)}
+                  source={imageSource}
+                />
               </Flex>
             ) : null}
           </>
