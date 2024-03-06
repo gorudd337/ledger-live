@@ -1409,6 +1409,7 @@
   },
   "dashboard" : {
     "title" : "Portfolio",
+    "header" : "Saldo del portfolio",
     "emptyAccountTile" : {
       "desc" : "Agrega cuentas para gestionar otros activos cripto",
       "createAccount" : "Agregar cuenta"
@@ -1449,6 +1450,27 @@
         "description" : "Solo te queda un paso para disfrutar de Ledger Recover.",
         "primaryCta" : "Conectar",
         "secondaryCta" : "Quizás más tarde"
+      }
+    },
+    "marketPerformanceWidget" : {
+      "title" : "Tendencia de {{time}}",
+      "buy" : "Comprar",
+      "swap" : "Permutar",
+      "gainers" : "Ganadores",
+      "losers" : "Perdedores",
+      "error" : {
+        "title" : "Lo sentimos pero no hemos podido cargar la tendencia",
+        "description" : "Inténtalo de nuevo más tarde"
+      },
+      "missingData" : {
+        "gainers" : {
+          "title" : "No hay ningún activo entre los 50 principales ganadores de las últimas 24 horas",
+          "description" : "Considera consultar los principales perdedores o vuelve más tarde"
+        },
+        "losers" : {
+          "title" : "No hay ningún activo entre los 50 principales perdedores de las últimas 24 horas",
+          "description" : "Considera consultar los principales ganadores o vuelve más tarde"
+        }
       }
     }
   },
@@ -1756,7 +1778,7 @@
   "DeviceAction" : {
     "allowAppPermission" : "Abre la aplicación {{wording}} en tu dispositivo",
     "allowAppPermissionSubtitleToken" : "para administrar los tokens {{token}}",
-    "allowManagerPermission" : "Permitir Ledger Manager en tu {{productName}}",
+    "allowManagerPermission" : "Permitir conexión segura",
     "allowRenaming" : "Permitir renombrar en tu dispositivo",
     "loading" : "Cargando...",
     "connectAndUnlockDevice" : "Conecta y desbloquea tu dispositivo",
@@ -2206,6 +2228,15 @@
       },
       "summary" : {
         "title" : "Resumen"
+      },
+      "networkFee" : {
+        "title" : "Elegir tarifa de red"
+      },
+      "reviewSummary" : {
+        "title" : "Revisar resumen"
+      },
+      "connectLedger" : {
+        "title" : "Conectar tu Ledger"
       },
       "device" : {
         "title" : "Dispositivo"
@@ -4178,6 +4209,13 @@
     "logs" : "Guardar registros",
     "dataFolder" : "Ver datos de usuario"
   },
+  "approve" : {
+    "title" : "Aprobar token",
+    "description" : "Aprobar token con tu dispositivo Ledger",
+    "unlimited" : "Estás autorizando a este proveedor a que acceda a una cantidad ilimitada del token seleccionado de tu billetera. Comprueba los detalles de la transacción en tu dispositivo Ledger antes de firmarla.",
+    "limited" : "Estás autorizando a este proveedor a que acceda al token seleccionado de tu billetera. Comprueba los detalles de la transacción en tu dispositivo Ledger antes de firmarla.",
+    "termsAndConditions" : "Al firmar esta transacción, aceptas los términos de uso de <0>{{appName}}.</0>"
+  },
   "exportOperationsModal" : {
     "title" : "Historial de operaciones",
     "desc" : "Selecciona para cuáles cuentas se guardará el historial de operaciones",
@@ -5431,7 +5469,7 @@
       "description" : "Reinicia el dispositivo sin tocar los botones cuando aparezca el logotipo. Contacta al Soporte de Ledger si persiste el problema."
     },
     "UserRefusedAllowManager" : {
-      "title" : "Mi Ledger denegado en el dispositivo"
+      "title" : "Conexión segura denegada en dispositivo"
     },
     "UserRefusedFirmwareUpdate" : {
       "title" : "Instalación de actualización de SO\ncancelada en el dispositivo",
@@ -5516,6 +5554,10 @@
     "TransactionHasBeenValidatedError" : {
       "title" : "No se puede acelerar ni cancelar",
       "description" : "Esta transacción ya se ha validado"
+    },
+    "SequenceNumberError" : {
+      "title" : "Error de número de secuencia",
+      "description" : "Cierra la ventana e inténtalo de nuevo más tarde"
     },
     "CantScanQRCode" : {
       "title" : "No fue posible escanear este código QR: esta dirección no es compatible con la verificación automática"
@@ -5914,9 +5956,6 @@
     "FailedToRetrieveFirmwareUpdateInfo" : {
       "title" : "Error al verificar la actualización del SO",
       "description" : "Algo ha salido mal. Inténtalo de nuevo o contacta al Soporte de Ledger en caso de duda."
-    },
-    "TezosUnrevealedAccount" : {
-      "title" : "Permuta no disponible: es necesario un envío o delegación inicial con la cuenta de Tezos o el cambio de par."
     }
   },
   "cryptoOrg" : {
