@@ -11,7 +11,7 @@ import murmurhash from "imurmurhash";
 import { log } from "@ledgerhq/logs";
 import { getEnv } from "@ledgerhq/live-env";
 import { isNFTActive } from "@ledgerhq/coin-framework/nft/support";
-import { CryptoCurrency, Unit } from "@ledgerhq/types-cryptoassets";
+import { CryptoCurrency, EthereumLikeInfo, Unit } from "@ledgerhq/types-cryptoassets";
 import { mergeOps } from "@ledgerhq/coin-framework/bridge/jsHelpers";
 import { encodeOperationId } from "@ledgerhq/coin-framework/operation";
 import { listTokensForCryptoCurrency } from "@ledgerhq/cryptoassets/tokens";
@@ -24,6 +24,7 @@ import {
   EvmTransactionEIP1559,
   EvmTransactionLegacy,
 } from "./types";
+import { getConfig } from "./config";
 
 /**
  * Helper to check if a legacy transaction has the right fee property
@@ -198,7 +199,8 @@ export const getSyncHash = (
     .map(token => token.id + token.contractAddress + token.name + token.ticker)
     .join("");
   const isNftSupported = isNFTActive(currency);
-  const { node = {}, explorer = {} } = currency.ethereumLikeInfo || {};
+  const config = getConfig!(currency) as EthereumLikeInfo;
+  const { node = {}, explorer = {} } = config;
   // Did the migration of token accounts IDs
   // e.g. binance-peg_bsc-usd to binance#!dash!#peg#!underscore!#bsc#!dash!#usd
   //
