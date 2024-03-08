@@ -88,7 +88,7 @@ runs:
         if [ "$explorerinput" != "" ]; then
           export EXPLORER=$explorerinput
         fi
-        node --prof lib/bot/cli.js
+        node lib/bot/cli.js
       shell: bash
     - name: submit bot report
       uses: ./tools/actions/submit-bot-report
