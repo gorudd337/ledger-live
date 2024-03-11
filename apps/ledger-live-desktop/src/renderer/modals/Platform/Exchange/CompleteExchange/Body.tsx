@@ -17,6 +17,7 @@ import { AccountLike } from "@ledgerhq/types-live";
 import { WrongDeviceForAccount } from "@ledgerhq/errors";
 import { SwapCompleteExchangeError } from "@ledgerhq/live-common/exchange/swap/completeExchange";
 import { useRedirectToSwapHistory } from "~/renderer/screens/exchange/Swap2/utils";
+import { getEnv } from "@ledgerhq/live-env";
 
 export type Data = {
   provider: string;
@@ -155,10 +156,6 @@ const Body = ({ data, onClose }: { data: Data; onClose?: () => void | undefined 
           operation,
           swapId,
         };
-        setBroadcastTransaction({
-          result: newResult,
-          provider,
-        });
         updateAccount({
           result: newResult,
           magnitudeAwareRate,
@@ -169,6 +166,9 @@ const Body = ({ data, onClose }: { data: Data; onClose?: () => void | undefined 
           sourceCurrency,
           targetCurrency,
         });
+        if (getEnv("DISABLE_TRANSACTION_BROADCAST")) {
+          return onCancel(new SwapCompleteExchangeError("PROCESS_TRANSACTION"));
+        }
       }
       onResult(operation);
     },
