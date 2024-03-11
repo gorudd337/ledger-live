@@ -166,6 +166,7 @@ const Body = ({ data, onClose }: { data: Data; onClose?: () => void | undefined 
           sourceCurrency,
           targetCurrency,
         });
+
         if (getEnv("DISABLE_TRANSACTION_BROADCAST")) {
           return onCancel(new SwapCompleteExchangeError("PROCESS_TRANSACTION"));
         }
@@ -175,6 +176,7 @@ const Body = ({ data, onClose }: { data: Data; onClose?: () => void | undefined 
     [
       setResult,
       onResult,
+      onCancel,
       updateAccount,
       magnitudeAwareRate,
       provider,
