@@ -52,7 +52,7 @@ export const ledgerOperationToOperations = (
         id: encodeOperationId(accountId, ledgerOp.hash, type),
         hash: ledgerOp.hash,
         type: type,
-        value: type === "OUT" || type === "FEES" ? value.plus(fee) : hasFailed ? fee : value,
+        value: type === "OUT" || type === "FEES" ? (hasFailed ? fee : value.plus(fee)) : value,
         fee,
         senders: [from],
         recipients: [to],
@@ -234,12 +234,14 @@ export const ledgerInternalTransactionToOperations = (
   action: LedgerExplorerInternalTransaction,
   index = 0,
 ): Operation[] => {
+  if (coinOperation.hasFailed) return [];
+
   const { hash, blockHeight, blockHash, date, accountId } = coinOperation;
   const { xpubOrAddress: address } = decodeAccountId(accountId);
   const from = safeEncodeEIP55(action.from);
   const to = safeEncodeEIP55(action.to);
   const checksummedAddress = eip55.encode(address);
-  const hasFailed = !!action.error; // AFAIK this is not working, all actions contain error = null even when it reverted
+  const hasFailed = coinOperation.hasFailed; // AFAIK this is not working, all actions contain error = null even when it reverted
   const value = new BigNumber(action.value);
   const types: OperationType[] = [];
 
