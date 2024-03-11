@@ -6,8 +6,9 @@ export const DebugSpeculos = () => {
       style={{
         top: 0,
         left: 0,
-        width: 256,
-        height: 64,
+        width: 303,
+        height: 90,
+        //position: "absolute",
       }}
     >
       <iframe src="http://127.0.0.1:5000" scrolling="no"></iframe>
