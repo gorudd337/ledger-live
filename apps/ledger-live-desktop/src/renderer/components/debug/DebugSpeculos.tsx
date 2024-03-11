@@ -8,7 +8,6 @@ export const DebugSpeculos = () => {
         left: 0,
         width: 303,
         height: 90,
-        //position: "absolute",
       }}
     >
       <iframe src="http://127.0.0.1:5000" scrolling="no"></iframe>
