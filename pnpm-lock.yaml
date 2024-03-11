@@ -16559,8 +16559,6 @@ packages:
     resolution: {integrity: sha512-GaHYm+c0O9MjZRu0ongGBRbinu8gVAMd2UZjji6jVmqKtZluZnptXGWhz1E8j8D2HJ3f/yMxKAUC0b+57wncIw==}
     dev: true
 
-<<<<<<< HEAD
-=======
   /@ledgerhq/devices@5.51.1:
     resolution: {integrity: sha512-4w+P0VkbjzEXC7kv8T1GJ/9AVaP9I6uasMZ/JcdwZBS3qwvKo5A5z9uGhP5c7TvItzcmPb44b5Mw2kT+WjUuAA==}
     dependencies:
@@ -16588,7 +16586,6 @@ packages:
       semver: 7.6.0
     dev: false
 
->>>>>>> 0a4efa243f (feat: add account selector for dapp on webview)
   /@ledgerhq/errors@5.50.0:
     resolution: {integrity: sha512-gu6aJ/BHuRlpU7kgVpy2vcYk6atjB4iauP2ymF7Gk0ez0Y/6VSMVSJvubeEQN+IV60+OBK0JgeIZG7OiHaw8ow==}
     dev: false
@@ -16787,8 +16784,6 @@ packages:
       read-yaml-file: 1.1.0
     dev: true
 
-<<<<<<< HEAD
-=======
   /@mapbox/node-pre-gyp@1.0.11:
     resolution: {integrity: sha512-Yhlar6v9WQgUp/He7BdgzOz8lqMQ8sU+jkCq7Wx8Myc5YFJLbEe7lgui/V7G1qB1DJykHSGwreceSaD60Y0PUQ==}
     hasBin: true
@@ -16809,7 +16804,6 @@ packages:
     dev: false
     optional: true
 
->>>>>>> 82177270d9 (refactor: share LLEthereumProvider between LLD and LLM with a bundle)
   /@mdx-js/mdx@2.3.0:
     resolution: {integrity: sha512-jLuwRlz8DQfQNiUCJR50Y09CGPq3fLtmtUQfVrj79E0JWu3dvsVcxVIcfhR5h0iXu+/z++zDrYeiJqifRynJkA==}
     dependencies:
@@ -24610,15 +24604,13 @@ packages:
       '@types/node': 20.8.10
     dev: false
 
-<<<<<<< HEAD
   /@types/eventsource@1.1.8:
     resolution: {integrity: sha512-fJQNt9LijJCZwYvM6O30uLzdpAK9zs52Uc9iUW9M2Zsg0HQM6DLf6QysjC/wuFX+0798B8AppVMvgdO6IftPKQ==}
     dev: false
-=======
+
   /@types/events@3.0.3:
     resolution: {integrity: sha512-trOc4AAUThEz9hapPtSd7wf5tiQKvTtu5b371UxXdTuqzIh0ArcRspRP0i0Viu+LXstIQ1z96t1nsPxT9ol01g==}
     dev: true
->>>>>>> 82177270d9 (refactor: share LLEthereumProvider between LLD and LLM with a bundle)
 
   /@types/express-serve-static-core@4.17.28:
     resolution: {integrity: sha512-P1BJAEAW3E2DJUlkgq4tOL3RyMunoWXqbSCygWo5ZIWTjUgN1YnaXWW4VWl/oc8vs/XoYibEGBKP0uZyF4AHig==}
@@ -37553,19 +37545,11 @@ packages:
     dependencies:
       resolve-pkg-maps: 1.0.0
 
-<<<<<<< HEAD
-  /get-tsconfig@4.7.2:
-    resolution: {integrity: sha512-wuMsz4leaj5hbGgg4IvDU0bqJagpftG5l5cXIAvo8uZrqn0NJqwtfupTN00VnkQJPcIRrxYrm1Ue24btpCha2A==}
-    dependencies:
-      resolve-pkg-maps: 1.0.0
-    dev: false
-=======
   /get-tsconfig@4.7.3:
     resolution: {integrity: sha512-ZvkrzoUA0PQZM6fy6+/Hce561s+faD1rsNwhnO5FelNjyy7EMGJ3Rz1AQ8GYDWjhRs/7dBLOEJvhK8MiEJOAFg==}
     dependencies:
       resolve-pkg-maps: 1.0.0
     dev: true
->>>>>>> 82177270d9 (refactor: share LLEthereumProvider between LLD and LLM with a bundle)
 
   /get-value@2.0.6:
     resolution: {integrity: sha512-Ln0UQDlxH1BapMu3GPtf7CuYNwRZf2gwCuPqbyG6pB8WfmFpzqcy4xtAaAMUhnNqjMKTiCPZG2oMT3YSx8U2NA==}
